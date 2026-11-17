@@ -1,0 +1,11 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { PageHero } from "@/components/page-hero";
+export const metadata: Metadata = { title: "Admissions" };
+const items = [["01","Speak with the school","Ask about current classes, available seats, age criteria and admission dates."],["02","Understand the requirements","Confirm the documents needed and whether an interaction or assessment is part of the process."],["03","Visit and complete the process","Arrange a campus visit and follow the instructions provided by the school office."]];
+export default function AdmissionsPage() {
+ return <main><PageHero eyebrow="ADMISSIONS" title="A new chapter" emphasis="starts here." description="Find out how to enquire about admission to United School of Excellence in Hyderbeigh, Pattan." />
+  <section className="section"><div className="wrap admissions-grid"><div><div className="eyebrow"><span /> YOUR NEXT STEP</div><h2>Let's make the<br /><em>first step simple.</em></h2><p className="admissions-copy">Admission availability, age criteria, fee structure, required documents and dates can change. Please confirm all details directly with the school office before making plans.</p><Link className="button button-dark" href="/contact">Make an enquiry <span>↗</span></Link></div><div className="admission-list">{items.map(([n,t,d])=><div className="admission-step" key={n}><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div><b>↗</b></div>)}</div></div></section>
+  <section className="section soft-section"><div className="wrap split-content"><div><div className="eyebrow"><span /> BEFORE YOU APPLY</div><h2>Get the right<br /><em>information.</em></h2></div><div className="prose"><p>Ask the school to confirm the class your child may apply for, the age requirement, admission schedule, fee details, documents and any applicable assessment.</p><p>We have not published unverified fees, eligibility rules or deadlines. The school office is the authoritative source for these details.</p></div></div></section>
+ </main>;
+}

@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
+export const metadata: Metadata = { title: "About the School" };
+export default function AboutPage() {
+  return <main><PageHero eyebrow="GET TO KNOW US" title="A school community," emphasis="rooted in possibility." description="Discover United School of Excellence, located in Hyderbeigh, Pattan, Baramulla, Jammu & Kashmir." />
+    <section className="section"><div className="wrap split-content"><div><div className="eyebrow"><span /> OUR SCHOOL</div><h2>Growing through<br /><em>learning together.</em></h2></div><div className="prose"><p className="lead">Every school has a story. The best way to tell ours is with the people, experiences and values that make this community distinctive.</p><p>United School of Excellence is located in Hyderbeigh, Pattan, in Baramulla district of Jammu & Kashmir. We are creating this online space to help parents and guardians find useful school information and connect with the school team.</p><p>Specific details about the school's founding, leadership, recognition, facilities and educational programme should be added here after confirmation by the school administration.</p></div></div></section>
+    <section className="section soft-section"><div className="wrap"><div className="eyebrow"><span /> OUR BELIEFS</div><h2>What matters<br /><em>along the way.</em></h2><div className="value-grid">{[["01","A sense of belonging","A school community where children and families feel welcomed."],["02","A love of discovery","Learning that encourages questions, exploration and new ideas."],["03","Growing with confidence","Supporting children as they develop skills and find their voice."]].map(([n,t,d])=><article className="value-card" key={n}><span className="value-number">{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
+  </main>;
+}
